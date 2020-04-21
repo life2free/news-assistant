@@ -4,7 +4,7 @@ Front-end building with React, which interacts with the News API
 
 ## Descriptions
 
-Build the front-end with React to search, create, edit, delete the news. The CRUD operations interacts with my Back-end API which implemented with Node, Express and MongoDB. I already deployed the Back-end API on the [Heroku](https://express-news-api.herokuapp.com/v1/) .
+Build the front-end with React to search, create, edit, delete the news. The CRUD operations interacts with my Back-end API which implemented with Node, Express and MongoDB. I already deployed the Back-end API on the [Heroku](https://express-news-api.herokuapp.com/v1) .
 
 ### Technologies Used
 
@@ -16,7 +16,7 @@ Build the front-end with React to search, create, edit, delete the news. The CRU
 
 ### Getting Started
 
-I deployed the project on Netlify, Click [here]() to experience it.
+I deployed the project on Netlify, Click [here](https://thunderous-news-assistant.netlify.app) to experience it.
 
 ## Contribute
 

@@ -2,7 +2,6 @@
   "name": "news-assistant",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://express-news-api.herokuapp.com/v1/",
   "dependencies": {
     "@material-ui/core": "^4.9.11",
     "@material-ui/icons": "^4.9.1",
