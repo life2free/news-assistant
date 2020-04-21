@@ -1,5 +1,14 @@
+* {
+  /* border: 1px solid rgba(39, 39, 39, 1);*/
+  /* box-sizing: border-box; */
+}
+
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .App-logo {
@@ -14,13 +23,26 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 10vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   font-size: calc(10px + 2vmin);
+  color: white;
+  width: 100vw;
+  background-color: lightseagreen;
+}
+
+.App-header a {
+  text-decoration: none;
+}
+
+.Nav-home {
+  width: 20%;
+}
+
+.Nav-home a {
   color: white;
 }
 
@@ -35,4 +57,65 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Nav-centerspace {
+  min-width: 20%;
+}
+
+.search-container {
+  min-width: 10%;
+}
+
+.action-container {
+  min-width: 10%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.Nav-searchinput {
+  width: 60%;
+  height: 100%;
+  font-size: 0.8em;
+}
+
+.Nav-searchbutton {
+  width: 28%;
+  text-align: left;
+  font-size: 0.8em;
+  border: 1px solid gray;
+}
+
+.App-main {
+  min-height: 80vh;
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.App-footer {
+  margin-top: 5%;
+  width: 100%;
+}
+
+.font_12 {
+  font-size: 12px;
+}
+
+.font_14 {
+  font-size: 14px;
+}
+
+.font_16 {
+  font-size: 16px;
+}
+
+.font_18 {
+  font-size: 18px;
+}
+
+.font_24 {
+  font-size: 24px;
 }

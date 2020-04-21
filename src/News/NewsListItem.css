@@ -1,0 +1,33 @@
+.NewsListItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1% 1% 3% 0;
+  width: 18vw;
+  height: 18vh;
+}
+
+.NewsListItem-img {
+  height: 100%;
+  width: 100%;
+}
+
+.NewsListItem-img img {
+  height: 100%;
+  width: 100%;
+  border-radius: 5%;
+}
+
+.NewsListItem-title {
+  width: 100%;
+  font-size: 0.8em;
+  color: darkblue;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1%;
+}
+
+.NewsListItem-title a {
+  text-decoration: none;
+}
