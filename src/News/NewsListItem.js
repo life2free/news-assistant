@@ -8,7 +8,7 @@ function NewsListItem(props) {
     <div className="NewsListItem">
       <div className="NewsListItem-img">
         <Link to={"/news/" + news._id}>
-          <img src={news.imageUrl}></img>
+          <img src={news.imageUrl} alt=""></img>
         </Link>
       </div>
       <div className="NewsListItem-title">
