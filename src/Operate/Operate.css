@@ -62,7 +62,8 @@
 
 .cancle-button {
   margin-left: 2%;
-  height: 2vh;
+  height: 3vh;
   width: 6vw;
   font-size: 1em;
+  background-color: white;
 }
