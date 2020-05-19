@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import "./App.css";
 import Main from "./Main/Main";
 import News from "./News/News";
@@ -54,6 +54,12 @@ class App extends Component {
             <Link to="/">Home</Link>
           </div>
           <div className="Nav-home">
+            <Link to="/newss/category/financial">Financial</Link>
+          </div>
+          <div className="Nav-home">
+            <Link to="/newss/category/covid">COVID</Link>
+          </div>
+          <div className="Nav-home">
             <Link to="/newss/category/sport">Sport</Link>
           </div>
           <div className="Nav-centerspace"></div>
@@ -82,34 +88,46 @@ class App extends Component {
           </div>
         </header>
         <main className="App-main">
-          <Route
-            path="/"
-            exact
-            render={() => (
-              <Main setNewsList={this.setNewsList} {...this.state} />
-            )}
-          />
-          <Route
-            path="/newss/category/:q"
-            exact
-            render={(routerProps) => (
-              <Main
-                setNewsList={this.setNewsList}
-                {...this.state}
-                {...routerProps}
-              />
-            )}
-          />
-          <Route
-            path="/news/:newsid"
-            render={(routerProps) => <News {...routerProps} />}
-          />
-          <Route path="/newss/search" render={() => <Search />} />
-          <Route path="/newss/create" render={() => <Operate op="1" />} />
-          <Route
-            path="/newss/edit/:newsid"
-            render={(routerProps) => <Operate op="2" {...routerProps} />}
-          />
+          <Switch>
+            <Route
+              path="/"
+              exact
+              render={() => {
+                // this.handleCategoryChange("");
+                return (
+                  <Main
+                    key="main"
+                    setNewsList={this.setNewsList}
+                    {...this.state}
+                  />
+                );
+              }}
+            />
+            <Route
+              path="/newss/category/:q"
+              render={(routerProps) => {
+                let category = routerProps.match.params.q;
+                return (
+                  <Main
+                    key={category}
+                    setNewsList={this.setNewsList}
+                    {...this.state}
+                    {...routerProps}
+                  />
+                );
+              }}
+            />
+            <Route
+              path="/news/:newsid"
+              render={(routerProps) => <News {...routerProps} />}
+            />
+            <Route path="/newss/search" render={() => <Search />} />
+            <Route path="/newss/create" render={() => <Operate op="1" />} />
+            <Route
+              path="/newss/edit/:newsid"
+              render={(routerProps) => <Operate op="2" {...routerProps} />}
+            />
+          </Switch>
         </main>
         <div className="App-footer">
           <Footer />

@@ -91,6 +91,15 @@ class Operate extends Component {
     });
   }
 
+  cancleHandle = (e) => {
+    e.preventDefault();
+    if (this.state.newsId !== undefined && this.state.newsId !== "") {
+      window.location.href = `/news/${this.state.newsId}`;
+    } else {
+      window.location.href = "/";
+    }
+  };
+
   changeHandle = (e) => {
     let targetId = e.target.id;
     let targetValue = e.target.value;
@@ -330,6 +339,9 @@ class Operate extends Component {
               value="Submit"
               className="create-submint-button"
             />
+            <button className="cancle-button" onClick={this.cancleHandle}>
+              Cancle
+            </button>
           </div>
         </form>
       </div>
