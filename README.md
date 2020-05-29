@@ -4,7 +4,7 @@ Front-end building with React, which interacts with the News API
 
 ## Descriptions
 
-Build the front-end with React to search, create, edit, delete the news. The CRUD operations interacts with my Back-end API which implemented with Node, Express and MongoDB. I already deployed the Back-end API on the [Heroku](https://express-news-api.herokuapp.com/v1) .
+Build the front-end with React to search, create, edit, delete the news. The CRUD operations interacts with my Back-end API which implemented with Node, Express and MongoDB. You can check the Back-end API on [Github](https://github.com/life2free/express-mongodb-api). I already deployed the Back-end API on the [Heroku](https://express-news-api.herokuapp.com/v1) .
 
 ### Technologies Used
 
