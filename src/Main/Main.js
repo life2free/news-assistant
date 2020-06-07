@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Client from "../Client";
+import Services from "../Utils/Services";
 import "./Main.css";
 import MainNews from "../News/MainNews";
 import NewsList from "../News/NewsList";
@@ -12,14 +12,14 @@ class Main extends Component {
     ) {
       let keywords = this.props.match.params.q;
       if (keywords) {
-        Client.getNewsByQuery(keywords, (res) => res.clone().json()).then(
+        Services.getNewsByQuery(keywords, (res) => res.clone().json()).then(
           (res) => {
             this.props.setNewsList(res);
           }
         );
       }
     } else {
-      Client.getAllNews((res) => res.clone().json()).then((res) => {
+      Services.getAllNews((res) => res.clone().json()).then((res) => {
         this.props.setNewsList(res);
       });
     }

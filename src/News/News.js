@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import "./News.css";
-import Client from "../Client";
+import Services from "../Utils/Services";
 
 class News extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class News extends Component {
         method: "delete",
         headers: { "Content-Type": "application/json" },
       };
-      Client.deleteNesById(requestOptions, this.state.newsid, (res) =>
+      Services.deleteNesById(requestOptions, this.state.newsid, (res) =>
         res.clone().json()
       ).then((res) => {
         if (res._id !== undefined && res._id === this.state.newsid) {
@@ -39,7 +39,7 @@ class News extends Component {
   componentDidMount() {
     let newsid = this.state.newsid;
     if (newsid !== undefined) {
-      Client.getNewsById(newsid)
+      Services.getNewsById(newsid)
         .then((res) => res.clone().json())
         .then((res) => {
           this.setState({ news: res });

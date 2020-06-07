@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Search.css";
-import Client from "../Client";
+import Services from "../Utils/Services";
 import NewsList from "../News/NewsList";
 // import "date-fns";
 
@@ -28,7 +28,7 @@ class Search extends Component {
     if (searchValue !== null) {
       searchValue = searchValue.trim();
 
-      Client.getNewsByQuery(searchValue, (res) => res.clone().json()).then(
+      Services.getNewsByQuery(searchValue, (res) => res.clone().json()).then(
         (res) => {
           this.setState({ newsList: res });
         }

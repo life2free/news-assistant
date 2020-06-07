@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Operate.css";
-import Client from "../Client";
+import Services from "../Utils/Services";
 
 Date.prototype.Format = (fmt) => {
   let date = new Date();
@@ -58,7 +58,7 @@ class Operate extends Component {
   componentDidMount() {
     let sourceList = [];
     let sourceItemList = "";
-    Client.getAllSource((res) => res.clone().json()).then((res) => {
+    Services.getAllSource((res) => res.clone().json()).then((res) => {
       sourceList = res;
       sourceItemList = sourceList.map((item, i) => {
         return (
@@ -70,7 +70,7 @@ class Operate extends Component {
 
       // for update
       if (this.state.operation === "2" && this.state.newsId !== "") {
-        Client.getNewsById(this.state.newsId)
+        Services.getNewsById(this.state.newsId)
           .then((res) => res.clone().json())
           .then((res) => {
             this.setState({
@@ -193,7 +193,7 @@ class Operate extends Component {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(requestBody),
           };
-          Client.createNews(requestOptions, (res) => res.clone().json()).then(
+          Services.createNews(requestOptions, (res) => res.clone().json()).then(
             (res) => {
               if (res._id !== undefined && res._id !== null) {
                 alert("the news create successfully!");
@@ -210,7 +210,7 @@ class Operate extends Component {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(requestBody),
           };
-          Client.editNewsById(requestOptions, this.state.newsId, (res) =>
+          Services.editNewsById(requestOptions, this.state.newsId, (res) =>
             res.clone().json()
           ).then((res) => {
             if (res._id !== undefined && res._id === this.state.newsId) {
